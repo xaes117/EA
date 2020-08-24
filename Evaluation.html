@@ -1,0 +1,1293 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>UCL Systems Engineering Project: Team 2</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(function () {
+            $("#sidebar1").load("Sidebar.html");
+        });
+    </script>
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header --><!--
+				<header id="header">
+					<a href="index.html" class="logo"><strong>COMP204P</strong></a>
+				</header> -->
+
+            <!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h1>Evaluation</h1>
+                    </header>
+                </div>
+            </section>
+
+            <section id="summary">
+                <h2>Summary</h2>
+
+                <div>
+                    <h3>Known Bugs</h3>
+                    <div>
+                        <b>Set Engine</b>
+                        <p></p>
+                        <ol style="list-style-type:disc">
+                            <li>
+                                May produce irrelevant sets for tables with multiple primary keys or no primary keys
+                            </li>
+                            <li>
+                                Testing not yet optimal
+                            </li>
+                            <li>
+                                Everything happens in one GenerateSets() function, decentralising this method could help
+                                improve testing and scalability
+                            </li>
+                        </ol>
+                    </div>
+                    <div>
+                        <b>Reader/Writer Libraries</b>
+                        <p></p>
+                        <ol style="list-style-type:disc">
+                            <li>
+                                Problem with reading sets in a particular way
+                            </li>
+                            <li>
+                                Line 98 of the reader file cannot directly call GetJSON() method but must parse string
+                                manually. Solution currently unknown
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <hr size="40">
+                <div>
+                    <h3>Summary of progress</h3><br>
+                    <p>We adopted an Agile approach to project development. Each sprint lasted 2 weeks and was
+                        synced with each bi-weekly report. The weights indicate the difficulty and importance of the
+                        task. We used the Fibonacci numbers to separate the weights. A maximum of three tasks could be
+                        assigned the same weight unless there is an exceptionally high number of tasks in the sprint
+                        backlog for a given sprint.</p>
+
+                    <table style="width: 300px">
+                        <tr>
+                            <td>Key</td>
+                            <td>Definition</td>
+                        </tr>
+                        <tr>
+                            <td>ANN</td>
+                            <td>Artificial Neural Network</td>
+                        </tr>
+                        <tr>
+                            <td>IE</td>
+                            <td>Interpretation Engine</td>
+                        </tr>
+                        <tr>
+                            <td>SE</td>
+                            <td>Set Engine</td>
+                        </tr>
+                    </table>
+
+                    <h4>Sprint 1</h4>
+                    <table border="1"
+                           style="font-family: arial; width: 100%; box-shadow: none;    border-collapse: collapse;">
+                        <tr class="headingTop">
+                            <td colspan="5" style="text-align: center">Sprint 1</td>
+                            <td colspan="3" style="text-align: center">Team member contribution (%)</td>
+                        </tr>
+                        <tr align="middle">
+                            <td>Task in Sprint Backlog</td>
+                            <td>MoSCow ID</td>
+                            <td>Status</td>
+                            <td>Still in use</td>
+                            <td>Weight</td>
+                            <td>Nathan</td>
+                            <td>Lambros</td>
+                            <td>Junwen</td>
+
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Basic version of SE</td>
+                            <td>M2,M3</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Basic version of IE</td>
+                            <td>M6</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>8</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Set File storage system</td>
+                            <td>M1</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>3</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>REST end points integration with IE</td>
+                            <td>S1</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>2</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>MS Enterprise Library experiments</td>
+                            <td>S4</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>REST end point for dummy data</td>
+                            <td>M5</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Zip files</td>
+                            <td>S3</td>
+                            <td>In progress</td>
+                            <td>Yes</td>
+                            <td>3</td>
+                            <td>20%</td>
+                            <td></td>
+                            <td>80%</td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Research into UDP</td>
+                            <td>S2</td>
+                            <td>In progress</td>
+                            <td>No</td>
+                            <td>1</td>
+                            <td></td>
+                            <td>20%</td>
+                            <td>80%</td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Automatic FTP upload to WebServer</td>
+                            <td>M1</td>
+                            <td>Stoped</td>
+                            <td>No</td>
+                            <td>2</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Support for multiple databases</td>
+                            <td>C1</td>
+                            <td>In progress</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+                        </tr>
+
+
+                    </table>
+                    <p>As we were adopting an Agile approach to the project we decided to accomplish the most important
+                        tasks within the first sprint. This meant creating MVPs of as many 'Must Have' requirements as
+                        possible hence the large number of 'Must Have' requirements completed during the first sprint.
+                        We managed to complete these tasks on time and evaluate the work for the next sprint.
+                    </p>
+                    <hr size="30">
+                </div>
+
+                <div>
+                    <h4>Sprint 2</h4>
+                    <table border="1"
+                           style="font-family: arial; width: 100%; box-shadow: none;    border-collapse: collapse;">
+                        <tr class="headingTop">
+                            <td colspan="5" style="text-align: center">Sprint 2</td>
+                            <td colspan="3" style="text-align: center">Team member contribution (%)</td>
+                        </tr>
+                        <tr align="middle">
+                            <td>Task in Sprint Backlog</td>
+                            <td>MoSCow ID</td>
+                            <td>Status</td>
+                            <td>Still in use</td>
+                            <td>Weight</td>
+                            <td>Nathan</td>
+                            <td>Lambros</td>
+                            <td>Junwen</td>
+
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Optimise existing Set Engine and REST Service</td>
+                            <td>M8</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Optimise IE</td>
+                            <td>M8</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>5</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Set Intersections on Azure VM</td>
+                            <td>S1</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>3</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Read/Write data from Azure Blob</td>
+                            <td>M7</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>2</td>
+                            <td>30%</td>
+                            <td>70%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Zip files</td>
+                            <td>S3</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td></td>
+                            <td>50%</td>
+                            <td>50%</td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Support For multiple databases</td>
+                            <td>C1</td>
+                            <td>In progress</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Expression Tree experiments</td>
+                            <td>S4</td>
+                            <td>In progress</td>
+                            <td>No</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+
+                    </table>
+
+                    <p>During this sprint we aimed to optimise the system as much as possible given the feedback from
+                        the client. We also decided to tackle the core problems to make the system to improve the
+                        scalability of the system. We made improvements to the core components including the Set Engine,
+                        Interpretation Engine and the REST Service.
+                    </p>
+                    <hr size="30">
+                </div>
+
+                <div>
+                    <h4>Sprint 3</h4>
+                    <table border="1"
+                           style="font-family: arial; width: 100%; box-shadow: none;    border-collapse: collapse;">
+                        <tr class="headingTop">
+                            <td colspan="5" style="text-align: center">Sprint 3</td>
+                            <td colspan="3" style="text-align: center">Team member contribution (%)</td>
+                        </tr>
+                        <tr align="middle">
+                            <td>Task in Sprint Backlog</td>
+                            <td>MoSCow ID</td>
+                            <td>Status</td>
+                            <td>Still in use</td>
+                            <td>Weight</td>
+                            <td>Nathan</td>
+                            <td>Lambros</td>
+                            <td>Junwen</td>
+
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Integration of IE with Azure Blob</td>
+                            <td>C7</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>8</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Fix REST end points for Team 1</td>
+                            <td>S1</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>13</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Feed forwrd ANN for Set Engine</td>
+                            <td>M4</td>
+                            <td>Stopped</td>
+                            <td>No</td>
+                            <td>8</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Work on the C# Models for best representation of Sets</td>
+                            <td>C7</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Expression Tree experments</td>
+                            <td>S4</td>
+                            <td>Complete</td>
+                            <td>No</td>
+                            <td>5</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+
+                    </table>
+
+                    <p> Our project workload during the third sprint was less than usual due to Reading week and
+                        Scenario
+                        Week. We managed to fix the REST endpoints and integrate the Interpretation Engine to read files
+                        from the Azure Blob and send these files to Team 1 via the REST API. We also wrote a basic
+                        neural network to classify data types which was going to be used for the Set Engine to
+                        differentiate sets.
+                    </p>
+                    <hr size="30">
+                </div>
+
+                <div>
+                    <h4>Sprint 4</h4>
+
+                    <table border="1"
+                           style="font-family: arial; width: 100%; box-shadow: none;    border-collapse: collapse;">
+                        <tr class="headingTop">
+                            <td colspan="5" style="text-align: center">Sprint 4</td>
+                            <td colspan="3" style="text-align: center">Team member contribution (%)</td>
+                        </tr>
+                        <tr align="middle">
+                            <td>Task in Sprint Backlog</td>
+                            <td>MoSCow ID</td>
+                            <td>Status</td>
+                            <td>Still in use</td>
+                            <td>Weight</td>
+                            <td>Nathan</td>
+                            <td>Lambros</td>
+                            <td>Junwen</td>
+
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Development of decision tree and implement into SE</td>
+                            <td>M4</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Integration of IE with the REST Service</td>
+                            <td>C7</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>3</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Chart Engine creation and optimisation</td>
+                            <td>S8</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Start work on Web API</td>
+                            <td>M5</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Setup continuous deployment for Web API</td>
+                            <td>S1</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Implementation of ZIP end point</td>
+                            <td>S6</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td>15%</td>
+                            <td>70%</td>
+                            <td>15%</td>
+
+                        </tr>
+
+                    </table>
+                    <p>During the fourth sprint we further optimised our system after feedback from the client. We made
+                        additional upgrades to the Set Engine with
+                        a decision tree to create a greater variety of sets. In a pivot maneuver we made the decision to
+                        remove the Interpretation Engine and integrate its parser with the REST service into one system.
+                        We decided that it would be more efficient for charts to be created in the backend for the
+                        reasons that sets can be loaded almost instantaneously and C# is disproportionately faster than
+                        Javascript. To cater to this we created the Chart Engine that generates Chart Objects given a
+                        REST request.
+                        We also created a new API website.
+                    </p>
+                    <hr size="30">
+                </div>
+
+                <div>
+                    <h4>Sprint 5</h4>
+                    <table border="1"
+                           style="font-family: arial; width: 100%; box-shadow: none;    border-collapse: collapse;">
+                        <tr class="headingTop">
+                            <td colspan="5" style="text-align: center">Sprint 5</td>
+                            <td colspan="3" style="text-align: center">Team member contribution (%)</td>
+                        </tr>
+                        <tr align="middle">
+                            <td>Task in Sprint Backlog</td>
+                            <td>MoSCow ID</td>
+                            <td>Status</td>
+                            <td>Still in use</td>
+                            <td>Weight</td>
+                            <td>Nathan</td>
+                            <td>Lambros</td>
+                            <td>Junwen</td>
+
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Further optimisation to Chart Engine, SE and libraries</td>
+                            <td>S5, C2, C3</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Speed test and experimentation</td>
+                            <td>S4, S5</td>
+                            <td>Complete</td>
+                            <td>N/A</td>
+                            <td>13</td>
+                            <td>95%</td>
+                            <td>5%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Experimenting with non-blob solution</td>
+                            <td>C7</td>
+                            <td>In progress</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Creating a new test db for Solution 2</td>
+                            <td>C7</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Data recovery and creation of database generation tool</td>
+                            <td>C4</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Set creation from multi-key tables</td>
+                            <td>C7</td>
+                            <td>Stopped</td>
+                            <td>No</td>
+                            <td>2</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Integration of Chart Engine with REST API</td>
+                            <td>S7</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>3</td>
+                            <td>50%</td>
+                            <td>50%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Start on project website</td>
+                            <td>M0</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td>5%</td>
+                            <td></td>
+                            <td>95%</td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Web API Documentation</td>
+                            <td>C5</td>
+                            <td>In progress</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+
+                    </table>
+                    <p>During the fifth sprint we made significant improvements to the blob storage system by upgrading
+                        the set engine to produce a more efficient set structure. We suffered a major data loss but
+                        managed to restore the data by creating a new database generation tool. We made further
+                        improvements to the chart engine improving scalability as well as making significant updates to
+                        the REST API including integration of the latest chart engine. We also made a lot of
+                        optimisations by testing a variety of methods and choosing the most efficient solutions. We have
+                        also explored additional approaches to the permanent storage of sets, and have made progress
+                        towards integration with Team 1.
+                    </p>
+                    <hr size="30">
+                </div>
+
+                <div>
+                    <h4>Sprint 6</h4>
+                    <table border="1"
+                           style="font-family: arial; width: 100%; box-shadow: none;    border-collapse: collapse;">
+                        <tr class="headingTop">
+                            <td colspan="5" style="text-align: center">Sprint 6</td>
+                            <td colspan="3" style="text-align: center">Team member contribution (%)</td>
+                        </tr>
+                        <tr align="middle">
+                            <td>Task in Sprint Backlog</td>
+                            <td>MoSCow ID</td>
+                            <td>Status</td>
+                            <td>Still in use</td>
+                            <td>Weight</td>
+                            <td>Nathan</td>
+                            <td>Lambros</td>
+                            <td>Junwen</td>
+
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Set Engine Emailing</td>
+                            <td>C6</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Unit testing for Set Engine</td>
+                            <td>C8</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Experimenting with non-blob solution</td>
+                            <td>C7</td>
+                            <td>Complete</td>
+                            <td>N/A</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Further work on Solution 2</td>
+                            <td>C7</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Project website development</td>
+                            <td>M0</td>
+                            <td>In progress</td>
+                            <td>Yes</td>
+                            <td>13</td>
+                            <td>85%</td>
+                            <td>10%</td>
+                            <td>5%</td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Web API Final Endpoints</td>
+                            <td>S1</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Web API Documentation</td>
+                            <td>M5, M0</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>3</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Imagine Cup Application</td>
+                            <td>M0</td>
+                            <td>Complete</td>
+                            <td>N/A</td>
+                            <td>8</td>
+                            <td>50%</td>
+                            <td>50%</td>
+                            <td></td>
+
+                        </tr>
+
+                    </table>
+                    <p>
+                        For the sixth sprint we focused on the remaining 'Could Have' requirements. Lambros conducted
+                        further experiments into alternative solutions while Nathan developed the last features for the
+                        Set Engine and developed the project website with Junwen. We also submitted the Web API for
+                        the Microsoft Imagine Cup competition.
+                    </p>
+                    <hr size="30">
+                </div>
+
+                <div>
+                    <h4>Sprint 7</h4>
+                    <table border="1"
+                           style="font-family: arial; width: 100%; box-shadow: none;    border-collapse: collapse;">
+                        <tr class="headingTop">
+                            <td colspan="5" style="text-align: center">Sprint 7</td>
+                            <td colspan="3" style="text-align: center">Team member contribution (%)</td>
+                        </tr>
+                        <tr align="middle">
+                            <td>Task in Sprint Backlog</td>
+                            <td>MoSCow ID</td>
+                            <td>Status</td>
+                            <td>Still in use</td>
+                            <td>Weight</td>
+                            <td>Nathan</td>
+                            <td>Lambros</td>
+                            <td>Junwen</td>
+
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Finalise API Website (User manual)</td>
+                            <td>M5, M0</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>2</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Create system manual</td>
+                            <td>M0</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>3</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                        <tr align="middle">
+                            <td>Create project video</td>
+                            <td>M0</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td>50%</td>
+                            <td>50%</td>
+                            <td></td>
+
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Finish project website</td>
+                            <td>M0</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>13</td>
+                            <td>95%</td>
+                            <td>5%</td>
+                            <td></td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Further API Development</td>
+                            <td>M0, S1</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>8</td>
+                            <td>30%</td>
+                            <td>70%</td>
+                            <td></td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Further Experimenting and Testing</td>
+                            <td>S4</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>5</td>
+                            <td></td>
+                            <td>100%</td>
+                            <td></td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Final Presentation</td>
+                            <td>M0</td>
+                            <td>Complete</td>
+                            <td>Yes</td>
+                            <td>13</td>
+                            <td>33%</td>
+                            <td>33%</td>
+                            <td>33%</td>
+                        </tr>
+                    </table>
+                    <p>
+                        During the final sprint we focused on further system integration and pushing out the final
+                        results of our research. We met with Team 1 several times to help integrate the product.
+                        Additionally we conducted further meetings to work on the presentation, video and website. We
+                        also created the system manual (Web API Website) and user manual for the project.
+                    </p>
+                </div>
+
+
+            </section>
+
+            <section id="evaluation">
+
+                <div>
+                    <h2>Architecture</h2>
+                    <div>
+                        <b>Integration Engine</b>
+                        <p>We tried to keep the architecture of the system as simple as possible. One major pivot
+                            decision
+                            was to remove the Integration Engine during the fourth sprint which was one of the main
+                            components in our system. This was to simplify the process down. We realised that we did not
+                            need a complex parser to map a request to a set but instead we could map a request directly
+                            to a
+                            set without any parsing. This greatly reduced complexity and improved the speed to
+                            retrieving
+                            sets as time was not wasted parsing.</p>
+                    </div>
+                    <div>
+                        <b>REST API</b>
+                        <p>
+                            We tried to keep the URLs of our API uniform, by adhering to the common practice of using
+                            singular nouns to suffix our requests. Due to the nature of our API, most (if not all) of
+                            the requests are of the GET variety, so the action performed by each URL becomes quite easy
+                            to decipher.
+                            <br><br>
+                            In an effort to add more features and to make the API more flexible, we found that we were
+                            driven to increasing the depth of our URLs in a way which made the API unnecessarily
+                            complex. To combat this, we changed our structure early on and we adopted the '?'
+                            parametrisation format. For example, requesting a Set of Students along with their
+                            MathsGrade would look like this:
+                            <br><br>
+                            /api/Set/Student/MathsGrade
+                            <br><br>
+                            but with the new design, it is much more intuitive:
+                            <br><br>
+                            /api/Set?setType=Student&setProperty=MathsGrade
+                            <br>
+                        </p>
+                    </div>
+                    <div>
+                        <b>REST API Error Handling</b>
+                        <p>
+                            For each type of request our API takes, we provide an informative error response when
+                            something goes wrong. Providing useful error responses will help developers get to know the
+                            API.
+                        </p>
+                    </div>
+                    <div>
+                        <b>Set Engine</b>
+                        <p>
+                            The Set Engine and its Decision Tree are both singletons. This helps with keeping track of
+                            the flow of data at runtime as the data is either in the Set Engine or in the Decision Tree.
+                            The fork/join design pattern helps us to keep control of the threads and flow of the
+                            program. Most importantly the fork/join pattern limits the number of sets in heap memory at
+                            run time thereby helping to reduce the risk of an OutOfMemoryException. Once all threads
+                            have joined the Set (along with its subsets) can be removed by the garbage collector and the
+                            Set Engine will begin creating the next Set.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h2>Efficiency</h2>
+                    <div>
+                        <b>Random Sampling Algorithm</b>
+                        <p>We evaluated the algorithm's time complexity to O(n) where n is the number of random samples
+                            to be selected.</p>
+                    </div>
+                    <div>
+                        <b>Transportation</b>
+                        <p>We found ZIP to be the most efficient method of transportation with the lowest error rate out
+                            of the methods we tried. We also found that TCP and UDP are roughly the same in terms of
+                            speed with UDP gaining about a 4.5% speed up against TCP.<br><br>The REST API on a fast
+                            connection returns sets
+                            within 1 second for a medium sized set (circa 100000 data points) and around 2 seconds for
+                            larger sets (>1 million) with set operations.</p>
+                    </div>
+                    <div>
+                        <b>Chart Creation</b>
+                        <p>From our experiments we found that using multi-threading and JSON splitting to be the fastest
+                            method of creating the Chart objects. Reading from a local database gave a speed up of about
+                            5 times compared to reading from a cloud blob.</p>
+                    </div>
+                    <div>
+                        <b>Continuous Integration</b>
+                        <p>We have implemented continuous integration with out Web API to ensure everything will work as
+                            new features are being deployed. In the future we could extend this to all components in our
+                            system.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>Compatibility</h2>
+                    <div>
+                        <b>REST API</b>
+                        <p>The REST API should be able for use to every developer wishing to use this API.</p>
+                    </div>
+                    <div>
+                        <b>Set Engine</b>
+                        <p>The Set Engine should be able to work with any database. It is using the MySQL
+                            connector classes to connect to the database. We have experimented with ADO.NET to read from
+                            SQL and MySQL databases and integrating this feature with the Set Engine can ensure
+                            compatibility with SQL databases.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>Maintainability</h2>
+                    <h3>Azure</h3>
+                    <p>In terms of maintenance the system should be fully functional on Azure. For very large datasets
+                        scaling to a more expensive VM may be required to increase the working memory of the Set Engine
+                        at run time. With circa 10 million data points we noticed OutOfMemory exceptions on a standard
+                        tier VM. We have tried to make the system more memory efficient by removing storage of Sets
+                        after they have been uploaded to the Blob.
+                    </p>
+
+                    <h3>Set Engine Memory Feasibility</h3>
+                    <p> If the entire application is single threaded
+                        OutOfMemory exceptions are less likely to occur however the set creation process will be much
+                        slower. It is important to consider the trade-off between speed and memory usage in
+                        this instance. If the system is multi-threaded it will be faster but may also use up memory
+                        faster than the garbage collector can remove it. On the other hand we can reduce the memory
+                        usage but at the expense of increased computation time. We have implemented a fork/join design
+                        pattern to help minimise memory usage while maximising speed. However even with the design
+                        pattern a run without memory leaks are not guarenteed in all cases and so this should be a case
+                        to be aware of when undergoing system maintenance.</p>
+                    <h3>Set Engine Automation</h3>
+                    <p>The Set Engine contains a suite of features for automation. The Set Engine can be run on the
+                        Windows Tasks Scheduler application available on all Windows Servers 2012 and later. In addition
+                        the Set Engine also includes an automated emailing service to notify administrators of any
+                        defects that have occurred during a particular run and so problems likely to be identified and
+                        solved quicker.</p>
+                </div>
+
+                <div>
+                    <h2>Evaluation of Testing</h2>
+
+                    <div>
+                        <b>Speed Tests</b>
+                        <p></p>
+                        <ol>
+                            <li>
+                                <p>
+                                    Problem<br>One of the main priorities of the project was to experiement with
+                                    different methods of
+                                    transporting and manipulating the data. SIMS face major difficulties with computing
+                                    the data
+                                    on a large scale so it was imperative for us to try our best to find the fastest
+                                    possible
+                                    methods for our clients.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Methodology<br>We identified the key areas where the system was slowest. This was
+                                    sending data over the REST API and computing the Chart objects. Once key areas for
+                                    speed testing was identified we attempted multiple different solutions of solving
+                                    the problem. We measured the average time for each solution and compared the
+                                    solutions against each other.
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    Conclusion<br>We found that JSON Splitting and multi-threading were the best
+                                    solution as it had the fastest time for generating Chart objects and reading data
+                                    from a database on the same server as the REST service had the fastest read time. We
+                                    also discovered that sending a ZIP file was the fastest method of transportation.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <b>Error Testing</b>
+                        <p></p>
+                        <ol>
+                            <li>
+                                Data Transportation<br>Randomly selecting 1000 to 50000 samples from a set happened to
+                                be very fast for transporting data across a TCP stream. When two randomly sampled sets
+                                were intersected (e.g. Two random
+                                samples of 5000 IDs from two Sets) we found that the error rate of the intersection fell
+                                below 0.1% after about about 13000 - 15000 random samples given a set of 500000 unique
+                                IDs. This was unfortunately accompanied with the fact that no more than 60 observed
+                                intersections occurred between two randomly sampled sets. This was bad in case the user
+                                wanted to further intersect the new set with another set. As a result we decided to
+                                stick with using ZIP files.
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div>
+                        <b>Unit Testing</b>
+                        <p></p>
+                        <ol>
+                            <li>
+                                Set Engine<br>We created a Test database for the Set Engine. The Test database contained
+                                data where we could determine the output set that should be created. For each predicted
+                                output set we created a unit test and tested it against the predicted set created by the
+                                Set Engine.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div>
+                    <h2>Project Management</h2>
+
+                    <div>
+                        <b>Decision to choose Agile Scrum</b>
+                        <p><br>
+                            Due to miscommunication between our team, the department and our client we experienced major
+                            set backs
+                            during
+                            the early stages of the project. The team was switched to a new project towards the end of
+                            November giving us two weeks to gather new requirements, research and prototyping before the
+                            website and video deadline for COMP204P. As a result this left us with a huge backlog of
+                            work to do for next term.<br><br>To counteract the massive backlog of work
+                            resulting from COMP204P we decided to adopt an Agile approach to developing the system. We
+                            could therefore develop the most important features first and iterate towards an optimal
+                            feature. We would only conduct further research and prototyping on the features that
+                            worked and dropped the features that did not work. This gave us the time we needed to
+                            develop the system to its best potential while also conducting the missed out research that
+                            would have otherwise happened during Term 1.
+                        </p>
+                    </div>
+                    <br>
+                    <img src="images/SprintBacklog/SprintStats/percentages.png"
+                         width="700" align="middle"><br>
+                    <p>Figure 1: Analysis of requirements attempted per sprint</p>
+                    <p>We analysed the progress of our sprints and noticed that 'Must Have' requirements show up most
+                        frequently at the start. Then 'Should Have' requirements start increasing in frequency followed
+                        by 'Could Have' requirements. By sprint 5 we had completed most of the 'Must Have' requirements
+                        and'Should Have' and 'Could Have' requirements made up circa 80% of our workload. The number of
+                        tasks related
+                        to the final
+                        submission (in green) also started to rise at the start of the fifth sprint and accounted for
+                        almost 85% of our workload during the final sprint.
+                    </p>
+                    <br>
+                    <img src="images/SprintBacklog/SprintStats/Screen%20Shot%202017-04-09%20at%2019.24.03.png"
+                         width="500" align="middle"><br>
+                    <p>Figure 2: Chart showing the total weights of our work for each sprint.</p>
+                    <p>We plotted the bar chart of the total combined weight for each sprint. Sprint 3 was reading week
+                        followed by Scenario week and so the output for the third sprint was particularly low. We could
+                        have put in a lot more effort for Sprint 2 and 4.</p>
+                    <br>
+                    <img src="images/SprintBacklog/SprintStats/netsum.png"
+                         width="700" align="middle">
+                    <p>Figure 3: Chart showing the total weights of our work for each sprint with the task category.</p>
+                    <p>The above graph is a combination of Figure 1 and 2. The graph shows the weights and how much was
+                        contributed towards each requirement type.
+                    </p>
+                </div>
+
+
+            </section>
+
+            <section id="future">
+                <h2>Future Work</h2>
+                <ol>
+                    <li>
+                        <div>
+                            <h3>Lazy Evaluation</h3>
+                            <p>Another future development which can help make the data delivery faster and more
+                                efficient, would be the introduction of a lazy data delivery system. The idea behind
+                                this would be that only the data that is actually needed at that point in time would be
+                                sent across to the client’s web browser.
+
+                                For example, let’s say the client requests the data set “all students with the property
+                                gender”, with a view of plotting a bar chart that showcases how many female against how
+                                many male students the school(s) have. Bearing in mind that this could be data from
+                                hundreds of schools, this would be a very large Json string to return. With lazy data
+                                return, the values first returned would literally be just the ratios needed to plot the
+                                bar chart (i.e. what our Chart Engine is doing now). Let’s then say that the client want
+                                to view the actual student “within” the male subset of students. Instead of returning
+                                the whole subset which could consist of thousands of students, the lazy system could
+                                return only as many students as the screen/canvas area can fit at that moment, caching
+                                the rest on the server for later delivery.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>User Authentication</h3>
+                            <p>
+                                Because this is an education project, which has the potential to handle actual data from
+                                schools, privacy and security should be a big part of any future development. One really
+                                important thing to think about would be the access levels of different clients to the
+                                data on the system’s servers. For example, clients from a particular school should only
+                                be allowed to request data from their own schools, whereas local borough authorities
+                                only data from their own borough.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>
+                                Multiple Primary Key Tables
+                            </h3>
+                            <div align="left">
+                                <p>One difficulty we came across were tables with multiple primary keys. In Figure 4 we
+                                    have
+                                    the School ID and the Academic Year as the primary keys.</p>
+                                <figure align="middle">
+                                    <img src="images/SetEngine/multikey-table.png" width="500px">
+                                    <p>Figure 4: Sample table with two primary keys</p>
+                                </figure>
+
+                                <p>The solution we proposed was to concatenate the primary keys to form the set. This
+                                    resulted
+                                    in
+                                    the
+                                    set in Figure 5 when we viewed the results.</p>
+
+                                <figure align="middle">
+                                    <img src="images/SetEngine/multikey-table2.png" width="150px">
+                                    <p>Figure 5: The resulting table from the proposed algorithm</p>
+                                </figure>
+                                <p>From analysis we can see that this would not work well with other sets since other
+                                    sets
+                                    usually
+                                    have IDs of the Academic year or School ID but rarely both.<br><br>A solution may be
+                                    to
+                                    split
+                                    the ID by a delimiter and see how this would interact with other sets. Given an
+                                    additional 6
+                                    months this could be an area of future work.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <h3>
+                                Scaling the system for all schools (clients)
+                            </h3>
+                            <div align="left">
+                                <p>The current system generates a blob for one database. In the future this can be
+                                    expanded to
+                                    all the clients. Each client will have their own set database on a container on
+                                    Azure. Then
+                                    when a client logs into their account the Web API will then read data from the
+                                    clients
+                                    container blob.</p>
+                                <div align="middle">
+                                    <div style="width: 501px">
+                                        <img src="images/Solution2/Scaling1.png" width="500">
+                                        <p>
+                                            Figure 6: Set Engine or some data generation engine reading from every
+                                            client's
+                                            database and
+                                            creating each client a set storage on a blob on Azure.
+                                        </p><br>
+                                        <img src="images/Solution2/Scaling2.png" width="500">
+                                        <p>
+                                            Figure 7: Diagram showing clients retrieving data from each of their own
+                                            individual
+                                            blobs.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </section>
+
+
+        </div>
+    </div>
+
+    <div id="sidebar1"></div>
+
+</div>
+
+
+</body>
+</html>
