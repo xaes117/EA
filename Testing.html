@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>UCL Systems Engineering Project: Team 2</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(function () {
+            $("#sidebar1").load("Sidebar.html");
+        });
+    </script>
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header --><!--
+				<header id="header">
+					<a href="index.html" class="logo"><strong>COMP204P</strong></a>
+				</header> -->
+
+            <!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h1>Testing</h1>
+                    </header>
+                </div>
+            </section>
+
+            <section id="SpeedTests">
+                <h2>Speed Tests</h2>
+                <p>We have run several speed tests including reading data from different resources, generating chart
+                    graphs in front-end and back-end, and so on. Below are the results we got from the speed tests.</p>
+
+                <b>Some terminology</b>
+                <ol>
+                    <li>Random Sample: The random sample with a scalar is a method where we randomly select 1000 samples
+                        and send this to the front end along with a scalar multiple so the number can be multiplied back
+                        up to the real set.
+                    </li>
+                    <li>
+                        JSON Splitting: This is where we split the string with delimiters and count the
+                        resulting array. It happens to be the size of the set.
+                    </li>
+                    <li>Dictionary Size: This is the value of parsing the JSON
+                        string into a Dictionary Object and returning the size of the Dictionary.
+                    </li>
+
+                </ol>
+
+                <b>Other Information</b>
+                <ol>
+                    <li>We were unable to obtain results from UDP but from <a
+                            href="http://stackoverflow.com/questions/24648118/in-windows-azure-does-the-cloudblockblob-putblock-method-use-tcp-or-udp-as-the">research</a>
+                        we managed to find that UDP/TCP
+                        speeds were fairly similar. The data is also shown in Figure 5.
+                    </li>
+                </ol>
+
+                <div align="center">
+                    <div style="width: 451px" align="center">
+                        <figure>
+                            <img src="images/t2.png" width="450">
+                            <figcaption>Figure 1: Time to generate charts using different methods against a database on
+                                the
+                                local machine.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/t3.png" width="450">
+                            <figcaption>Figure 2: Time to generate charts using different methods against the Azure
+                                blob before introduction of storing set sizes.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/t4.png" width="450">
+                            <figcaption>Figure 3: Time to retrieve a set against the Azure blob using different
+                                methods.
+                            </figcaption>
+                            <p></p>
+                        </figure>
+                        <figure>
+                            <img src="images/t1.png" width="450">
+                            <figcaption>Figure 4: Time comparison between Azure Blob and a local database using JSON
+                                splitting.
+                            </figcaption>
+                        </figure>
+                        <figure>
+                            <img src="images/TcpUdpTest.png" width="450">
+                            <figcaption>Figure 5: Time comparison between TCP and UDP.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="UnitTests">
+                <h2>Unit Tests</h2>
+                <ol>
+                    <li>
+                        <b>Set Engine</b>
+                        <p>Due to the complexity of some of the functions in the Set Engine it was a bit difficult to
+                            create
+                            automated tests for the Set Engine. (e.g. some processes upload data to the blob which
+                            should not
+                            happen during a test). To overcome this problem we simply added an optimal test parameter to
+                            the Set
+                            Engine which when called will put the Set Engine into test mode.</p>
+                        <figure align="middle">
+                            <img src="images/UnitTest.png" width="700">
+                            <figcaption>Figure 6: Screen shot showing unit tests being run on the Set Engine.
+                            </figcaption>
+                        </figure>
+                        <br>
+
+                        <p>When in test mode the Set Engine reads from a Test Database and the output is tested against
+                            a set of
+                            known output sets by
+                            calling the CompareSets(TestSet, PredictedSet) function where 'TestSet' is the answer and
+                            'PredictedSet' is the set generated by the Set Engine. Every single item in the Test and
+                            Predicted
+                            Set must match in order for the unit test to pass.</p>
+                    </li>
+                    <li>
+                        <b>REST API</b>
+                        <p>For the REST API we created a series of test for each controller to test against expected and
+                            actual I/O. We retrieved the set in JSON and checked if the set was empty. If the set was
+                            empty then the test case will fail.</p>
+                        <figure align="middle">
+                            <img src="images/APIScreenshots/UnitTests.png" width="600">
+                            <figcaption>
+                                Figure 7: Sample Unit Test for API Controller
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ol>
+
+            </section>
+
+            <section id="CompatibilityTests">
+                <h2>Compatibility Testing</h2>
+                <p>The Set Engine is meant to work with any relational database without knowing the structure of the
+                    database. In order to test this out we decided to run the Set engine against several different mock
+                    databases we created.<br></p>
+
+                <ol>
+                    <li>
+                        <b>Simple airline database (Figure 8)</b>
+                        <figure>
+                            <img src="images/SetEngine/CompatibilityTesting/airportTable.png" width="400">
+                            <figcaption>
+                                Figure 8: Basic database structure of airline company.
+                            </figcaption>
+                        </figure>
+                        <p><br>After running the Set Engine on this database we observed the following database
+                            structure on
+                            the blob. Note that the green icons are sets that can retrieved by front end developers. The
+                            cloud icons (leaf nodes on the tree) are an abstraction of the multiple subsets resulting
+                            from the parent set (the non-leaf node that is green). Each parent set can have up to
+                            hundreds of sub sets hence the cloud icon to represent multiple sets.<br></p>
+                        <figure>
+                            <img src="images/SetEngine/CompatibilityTesting/airportSchema.png" width="800">
+                            <figcaption>
+                                Figure 9: Output structure of the Set Engine on airline company mock database.
+                            </figcaption>
+                        </figure>
+                        <br>
+                    </li>
+                    <li>
+                        <b>Slightly more complex database of a hotel chain (Figure 9)</b>
+                        <figure>
+                            <img src="images/SetEngine/CompatibilityTesting/hotelSchema.png" width="400">
+                            <figcaption>
+                                Figure 10: Database schema of a mock hotel chain.
+                            </figcaption>
+                        </figure>
+                        <p><br>This database is slightly more complex than the airliner database we made. The hotel
+                            chain
+                            database contains foreign keys that are usually used for one-to-many mappings, one-to-one
+                            mappings and many-to-many mappings.<br></p>
+                        <figure>
+                            <img src="images/SetEngine/CompatibilityTesting/hotelBlob.png" width="800">
+                            <figcaption>Figure 11: Output structure of Set Engine after a run on the mock hotel chain
+                                database.
+                            </figcaption>
+                        </figure>
+                        <br>
+                    </li>
+                    <li>
+                        <b>Mock school management database (Figure 12)</b>
+                        <figure>
+                            <img src="images/SetEngine/CompatibilityTesting/schoolSchema.png" width="500">
+                            <figcaption>
+                                Figure 12: Database of school management system.
+                            </figcaption>
+                        </figure>
+                        <p><br>Last but not least we had run our Set Engine against the main school database that we
+                            were
+                            working with. The resulting Blob structure shown in Figure 13.</p>
+                        <figure>
+                            <img src="images/SetEngine/CompatibilityTesting/schoolBlob.png" width="800">
+                            <figcaption>
+                                Figure 13: Structure of the set database created by the Set Engine after a run on a mock
+                                school management database.
+                            </figcaption>
+                        </figure>
+                    </li>
+                </ol>
+            </section>
+
+            <section id="userTesting">
+                <h2>User Testing</h2>
+                <h3>
+                    Methodology
+                </h3>
+                <p>The main people using the Web API will be front end developers<br><br>As a result we decided to ask
+                    several computer science students including members from Team 1 whom we were working closely with to
+                    review several API calls on <a href="https://postcodes.io/docs">postcode.io</a> and then obtain
+                    feedback regarding their experience. This was because postcode.io had roughly what we had in mind
+                    and asking users what they liked about it would greatly help us find the best way to make our API as
+                    friendly as possible<br><br>Some students had not used the REST API before so we
+                    guided them on usage. We decided to conduct an open discussion session while the user used the API
+                    as we believed that receiving
+                    feedback while the user was using the product would be the most realistic feedback as it would
+                    reflect closely to what developers were thinking while they were using the API.
+                </p>
+
+                <h3>Conclusion</h3>
+                <p>
+                    We found that users found it easy to call REST requests from the address bar in their web browser.
+                    More inexperienced users of REST APIs showed more interest in the URI approach whereas a handful of
+                    experienced users used REST tools including Postman to call the REST requests. As a result we
+                    decided to opt for the URI approach as this would be the easiest for beginners to learn.
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <div id="sidebar1"></div>
+</div>
+
+
+</body>
+</html>

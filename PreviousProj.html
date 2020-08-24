@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>UCL Systems Engineering Project: Team 2</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header --><!--
+				<header id="header">
+					<a href="index.html" class="logo"><strong>COMP204P</strong></a>
+				</header> -->
+
+            <!-- Banner -->
+            <!--<section id="banner">-->
+            <!--<div class="content">-->
+            <!--<header>-->
+            <!--<h1>Stakeholders</h1>-->
+            <!--</header>-->
+            <!--</div>-->
+            <!--</section>-->
+
+            <!--Problem-->
+            <section id="capita">
+                <h2>Problem</h2>
+
+                <p>
+                    Task : Create an engine where users can ask questions and use the SIMS data to create a model that
+                    can answer any question.
+                </p>
+                <p>
+                    Challenges :
+                <ul>
+                    <li>Natural Language Processing (NLP)</li>
+                    <li>Creating (ideally an) unsupervised machine learning system to interpret the questions. Otherwise
+                        a supervised (or semi-supervised) machine learning system
+                    </li>
+                    <li>Decision tree to map interpretations to an SQL query.-
+                    </li>
+                    <li>Deploying a cloud service to receive and send data from server-to-client</li>
+                </ul>
+                </p>
+
+            </section>
+
+            <section id="research">
+                <h2>Research</h2>
+                <p>Natural Language Processing Solutions<br></p>
+                <ul>
+                    <li>Word2Vec (Discontinued. Supervised machine learning and will take long time to extract data
+                        needed to train Word2Vec model)
+                    </li>
+                    <li>Restricted Boltzmann Machine (RBM) (Proposed solution, possibility to seeing how deep delief
+                        nets perform in NLP)
+                    </li>
+                    <li>Latent Dirichlet Allocation (Discontinued. Only significantly better than RBM for unigram
+                        models, RBM significantly better for all other (n-gram) models)
+                    </li>
+                    <li>Resource Depcription Framework (RDF) Path Traversal (Discontinued)</li>
+                    <li>
+                        Fuzzy concepts and fuzzy logic (Discontinued)
+                    </li>
+                </ul>
+                <p>Deployment</p>
+                <ul>
+                    <li>Deploy app on Windows 2012 Server using Microsoft Azure</li>
+                    <li>Use REST API to transmit data</li>
+                    <li>MySql database for storage</li>
+                </ul>
+                <p>Decision Tree</p>
+                <ul>
+                    <li>Decision tree stored in a MySql database</li>
+                    <li>Use of foreign keys as pointers to allow scalability</li>
+                </ul>
+                </p>
+
+            </section>
+
+            <!--Solution-->
+            <section id="microsoft">
+                <h2>Solution</h2>
+
+                <p>Overview</p>
+                <p>
+                    The user enters a search term, then we use natural language processing to create an interpretation,
+                    which is essentially a path to traverse along the decision tree. Once the path has been traversed,
+                    the decision tree will return an SQL query than can be called on the SIMS database to get the most
+                    likely answer. The flow chart below shows the overview of the system.
+                </p>
+
+                <img src="images/r.png" style="width: 700px; height:450px;">
+
+            </section>
+
+            <!--Prototype -->
+            <section id="our_team">
+                <h2>Prototype</h2>
+
+                <p>
+                    Below is a diagramatic overview of the decision tree. A phrase is generated though a particular path
+                    that in turn maps to an SQL query used to retrieve data from SIMS.
+                </p>
+
+                <img src="images/DecisionTreeDesign/DecisionTreeDesign-1.png" style="width: 1000px; height:900px;">
+                <br>
+
+                <p><br>
+                    Decision Tree in MySql: <br><br>The implementation of the decision tree in MySql. Entity
+                    relationship diagram between tables is
+                    shown below.
+                </p>
+                <br>
+
+                <img src="images/DecisionTreeDesign/DecisionTreeDesign-2.png" style="width: 800px; height:800px;">
+
+                <p><br><br>The diagrams below show a basic commandline application showing a user navigating through the
+                    decision tree. When the user finishes navigating the decision tree, the path is returned with the
+                    SQL query to answer the question and a description of the query. The user can then execute the SQL
+                    query against the SIMS database and retrieve their desired answer.</p>
+
+                <p>At this stage we could not generate the SQL queries as we were experiencing issues setting up the
+                    SIMS software.</p>
+
+                <img src="images/DecisionTreeDesign/DecisionTree.png" style="width: 800px; height:100px;"><br>
+                <img src="images/DecisionTreeDesign/DecisionTree2.png" style="width: 800px; height:500px;">
+
+            </section>
+
+
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="inner">
+
+            <!-- Menu -->
+            <nav id="menu">
+                <header class="major">
+                    <h2>Menu</h2>
+                </header>
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li>
+                        <span class="opener">The Project</span>
+                        <ul>
+                            <li><a href="Background.html#description">Description</a></li>
+                            <li><a href="Background.html#requirements">Requirements</a></li>
+                            <li><a href="Background.html#research">Research</a></li>
+                            <li>
+                                <hr>
+                            </li>
+                            <li><a href="Background.html#log">Experiment Log</a></li>
+                            <li><a href="Background.html#biweekly_reports">Biweekly reports</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Stakeholders</span>
+                        <ul>
+                            <li><a href="stakeholders.html#capita">Capita</a></li>
+                            <li><a href="stakeholders.html#microsoft">Microsoft</a></li>
+                            <li><a href="stakeholders.html#our_team">Our Team</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="opener">Previous Project</span>
+                        <ul>
+                            <li><a href="PreviousProj.html#capita">Problem</a></li>
+                            <li><a href="PreviousProj.html#research">Research</a></li>
+                            <li><a href="PreviousProj.html#microsoft">Solution</a></li>
+                            <li><a href="PreviousProj.html#our_team">Prototype</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<!--[if lte IE 8]>
+<script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

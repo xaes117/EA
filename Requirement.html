@@ -1,0 +1,476 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>UCL Systems Engineering Project: Team 2</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="assets/css/ie8.css"/><![endif]-->
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]>
+    <script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script>
+        $(function () {
+            $("#sidebar1").load("Sidebar.html");
+        });
+    </script>
+</head>
+<body>
+
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Main -->
+    <div id="main">
+        <div class="inner">
+
+            <!-- Header --><!--
+				<header id="header">
+					<a href="index.html" class="logo"><strong>COMP204P</strong></a>
+				</header> -->
+
+            <!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h1>Requirements</h1>
+                    </header>
+                </div>
+            </section>
+
+            <section id="gather">
+                <h2>Gathering Requirements</h2>
+                <p>
+                    Towards the end of first term we received a
+
+                    <a href="files/description.pdf">project description</a>
+
+                    from our clients. It was really difficult to communicate with our clients to determine the sets of
+                    requirements as they were not very reponsive.
+                    From what we gathered from Team 1, the client required a backend that transferred the data to the
+                    frontend efficiently.<br>
+                    <br>
+                    We managed, with the assistance from Dr. Strange, to arrange a meeting with a developer from SIMS on
+                    12 January along with Team 1. During this meeting
+                    the developer taught us about the set system. He described to us that their system currently
+                    generates a database of sets and uses a chart engine to generate charts from the database of sets.
+                    The system does not need to know what the database looks like in order to generate sets.
+
+
+                </p>
+            </section>
+
+            <section id="initial">
+                <h2>Initial Requirements</h2>
+                <p>
+                    Functional Requirements:
+                </p>
+                <ol>
+                    <li type="circle">Create a storage system to store sets</li>
+                    <li type="circle">A program to generate sets without knowing the structure of the database</li>
+                    <li type="circle">A program to write data a to storage system in a structured format</li>
+                    <li type="circle">Create sets based on the data in a database</li>
+                    <li type="circle">A program to read data from the storage system that can be used in many different
+                        programs
+                    </li>
+                    <li type="circle">A systematic method of retrieving sets from the storage system</li>
+                    <li type="circle">An efficient way to send data to Team 1</li>
+                    <li type="circle">A fast method to transfer data</li>
+                </ol>
+                <p>
+                    Non-functional Requirements:
+                </p>
+                <ol>
+                    <li type="circle">Scalable design for REST Service</li>
+                    <li type="circle">Scalable design for Set Engine</li>
+                    <li type="circle">Protect personal data in the database</li>
+                </ol>
+                <br>
+                <p>
+                    Based on the lists of requirements above we designed the following system to meet the client's
+                    requirements
+                </p>
+                <ol>
+                    <li type="number">
+                        REST API:
+                        <br>
+                        <br>
+                        <p>We decided to use the REST API to send data to Team 1 because of its robustness and relative
+                            easy learning curve. In addition Visual Studio also has many skeleton projects and general
+                            purpose support for backend REST services.</p>
+                    </li>
+                    <li type="number">
+                        Interpretation Engine
+                        <br>
+                        <br>
+                        <p>The interpretation engine is a system that interprets GET requests
+                            sent from Team 1 by mapping the requests to a set in the set database.
+                            It reads from the set database and returns the set to the REST controller.</p>
+                    </li>
+                    <li type="number">
+                        Set Engine
+                        <br>
+                        <br>
+                        <p>The set engine includes a database connector which connects to a specified database. It reads
+                            data from the database and creates sets using information from the database. The Set Engine
+                            does not need to know the stucture of the database to craete the sets.</p>
+                    </li>
+
+                </ol>
+
+                <div align="middle">
+                    <p>
+                        <img src="images/initial.png" width="700" height="500" align="middle"><br>
+                        Figure 1: Schematic diagram to show the overview of our proposed system
+                    </p>
+                </div>
+
+                <h3>User Friendliness</h3>
+                <p>We also carefully considered how the user will interact with our API. One of the major drawbacks to
+                    APIs is the learning curve required to use the API. We therefore decided to make a simple three step
+                    process (click-copy-paste) for the user so they can get started with the API as soon as
+                    possible. (See Figure 2) </p>
+                <div align="middle">
+                    <p>
+                        <img src="images/Storyboard.png" width="1000" height="350" align="middle"><br>
+                        Figure 2: Storyboard showing the three step process to get started with the API.
+                    </p>
+                </div>
+
+            </section>
+
+            <section id="final">
+                <h2>Final Requirements</h2>
+                <p>Based on feedback from Team 1 and our client we added several extra requirements</p>
+
+                <p>
+                    Additional Functional Requirements:
+                </p>
+                <ol>
+                    <li type="circle">A Chart Engine to generate charts</li>
+                    <li type="circle">The Set Engine to generate a map of the storage system</li>
+                    <li type="circle">Splitting of sets into further subsets</li>
+                    <li type="circle">ZIP/UDP methods of transmitting data</li>
+                    <li type="circle">Set Engine to be able to read from multiple databases</li>
+                    <li type="circle">Experiment with more than one solution to visualising data</li>
+                </ol>
+
+                <p>
+                    Additional Non-functional Requirements:
+                </p>
+
+                <ol>
+                    <li type="circle">Chart Engine to have a scalable design</li>
+                    <li type="circle">Provide a documentation introducing how to use the API</li>
+                </ol>
+
+                <br>
+
+                <p>We decided to integrate the Interpretation Engine with the REST service because we were over
+                    complicating the process of retrieving sets. By creating a map of the set storage we can retrieve
+                    any set using a 1 to 1 mapping which is much simpler no parsing is required.<br><br> We decided to
+                    include a Chart Engine in our system because Team 1 are generating charts in Javascript once they
+                    receive the sets from the REST endpoint. This can be exceptionally slow as Javascript is much slower
+                    than C# and sending a simple Chart object in JSON takes much less time than sending sets that
+                    contain potentially millions of data points.</p>
+
+                <p>
+                    Based on the final requirements, we updated the diagram
+                </p>
+                <div align="middle">
+                    <img src="images/Solution2/solution2.png" width="800" align="middle">
+                    <br>
+                    <p>
+                        Figure 3: Schematic diagram to show the overview of the final system
+                    </p>
+                </div>
+                <p>There is a further second solution created as this was primarily an experimental project set by the
+                    client and so we decided that it would be helpful to provide multiple different solutions to a
+                    problem as this would diversify our risk and help us find a more optimal solution.</p>
+            </section>
+
+            <section id="moscow">
+                <h2>MoSCoW Functional and Non-Functional Requirements</h2>
+                <p>
+                <div style="width: 1000px">
+                    <table border="1"
+                           style="font-family: arial; width: 100%; box-shadow: none;    border-collapse: collapse;">
+                        <tr align="middle">
+                            <td><b>Type</b></td>
+                            <td><b>MoSCow ID</b></td>
+                            <td><b>Description</b></td>
+                            <td><b>Functional</b></td>
+                            <td><b>Status</b></td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Must Haves</td>
+                            <td>M0</td>
+                            <td>Final set of deliverables including a website, video and any other related content.</td>
+                            <td>Non-Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>M1</td>
+                            <td>A database for storing sets.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>M2</td>
+                            <td>The Set Engine can generate sets without knowing the structure of a database.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>M3</td>
+                            <td>The Set Engine can push sets to the set database in a structured format.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>M4</td>
+                            <td>The Set Engine can split sets into further subsets.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>M5</td>
+                            <td>A REST service for developers.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>M6</td>
+                            <td>The REST Controllers must be able to retrieve any set in the set database.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>M7</td>
+                            <td>Libraries to read and write from the chosen storage system for the database.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>M8</td>
+                            <td>Scalable design for each component.</td>
+                            <td>Non-Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Should Haves</td>
+                            <td>S1</td>
+                            <td>API allows Team 1 to perform basic requests.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>S2</td>
+                            <td>Experiment with UDP as a method of data transfer.</td>
+                            <td>Non-Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>S3</td>
+                            <td>Experiment with ZIP as a method of data transfer.</td>
+                            <td>Non-Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>S4</td>
+                            <td>Experiment with any other methods to transport data to Team 1 effectively.</td>
+                            <td>Non-Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>S5</td>
+                            <td>Experiment with different methods to generate charts as fast as possible.</td>
+                            <td>Non-Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>S6</td>
+                            <td>The REST Service to support retrieval of ZIP files.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>S7</td>
+                            <td>The REST Service to support retrieval of Graph objects in JSON.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td></td>
+                            <td>S8</td>
+                            <td>Chart Engine that can create Chart Objects in the backend.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Could Haves</td>
+                            <td>C1</td>
+                            <td>Set Engine to support multiple databases.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>C2</td>
+                            <td>Set Engine to generate a map of the storage system.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>C3</td>
+                            <td>Set Engine to generate size tags for sets.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>C4</td>
+                            <td>A tool to generate sample databases.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>C5</td>
+                            <td>Provide a documentation introducing how to use the API.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>C6</td>
+                            <td>Automated emailing system for the Set Engine.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>C7</td>
+                            <td>Experimenting with different solutions after main solution is implemented.</td>
+                            <td>Non-Functional</td>
+                            <td>Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>C8</td>
+                            <td>Unit Testing.</td>
+                            <td>Functional</td>
+                            <td>Complete</td>
+                        </tr>
+
+                        <tr align="middle">
+                            <td>Won't Haves</td>
+                            <td>W1</td>
+                            <td>The project must not be developed using .NET 4.0 or below.</td>
+                            <td>Non-Functional</td>
+                            <td>Not Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>W2</td>
+                            <td>The project must not use technology that is depreciated.</td>
+                            <td>Non-Functional</td>
+                            <td>Not Complete</td>
+                        </tr>
+                        <tr align="middle">
+                            <td></td>
+                            <td>W3</td>
+                            <td>The project must not use only one method of approach.</td>
+                            <td>Non-Functional</td>
+                            <td>Not Complete</td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section id="useCases">
+                <h2>Use Cases</h2>
+                <p>We developed use cases that predict typical event paths that could happen when developers use our
+                    API. (See Figure 4)</p>
+                <div align="middle">
+                    <div style="width: 900px">
+                        <img src="images/UseCases/useCase1.png" width="420" height="325">
+                        <img src="images/UseCases/useCase2.png" width="420" height="325">
+                    </div>
+                    <p>
+                        Figure 4: Use case diagrams
+                    </p>
+                </div>
+
+
+            </section>
+
+            <section id="persona">
+                <h2>Persona</h2>
+                <p>After working closely with Team 1 we considered the various parties whom would be interested to use
+                    the API. From the meetings with Team 1 and SIMS we have created personas of people who would
+                    show interest in the API.</p>
+                <div align="middle">
+                    <p>Persona 1</p>
+                    <img src="images/p1.png" width="800" height="550">
+                    <p></p>
+                    <p>Persona 2</p>
+                    <img src="images/p2.png" width="800" height="550">
+                </div>
+                <hr size="30">
+            </section>
+
+        </div>
+    </div>
+    <div id="sidebar1"></div>
+
+
+</div>
+
+</body>
+</html>
